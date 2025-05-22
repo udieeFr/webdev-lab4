@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Validator</title>
+  <script>
+    function checkInput() {
+      // Get the input value
+      var input = document.getElementById("userInput").value;
+
+      // Trim whitespace and check if it's empty
+      if (input.trim() === "") {
+        alert("Please insert a number!");
+        return;
+      }
+
+      // Convert input to a number
+      var number = parseFloat(input);
+
+      // Check if input is a valid number
+      if (isNaN(number)) {
+        alert("Please insert a number!");
+      } 
+      else if (number < 10) {
+        alert("The number is lower than 10");
+      } 
+      else {
+        alert("The number is higher than 10");
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Check Number</h2>
+  <input type="text" id="userInput" placeholder="Enter a number">
+  <button onclick="checkInput()">Check</button>
+
+</body>
+</html>
